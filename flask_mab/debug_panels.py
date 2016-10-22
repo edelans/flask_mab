@@ -41,5 +41,5 @@ class BanditDebugPanel(DebugPanel):
         context['raw_cookie'] = self.raw_cookie
         context['storage_engine'] = current_app.config.get("MAB_STORAGE_ENGINE")
         context['storage_opts'] = current_app.config.get('MAB_STORAGE_OPTS', tuple())
-        context['bandits'] = current_app.extensions['mab'].bandits.iteritems()
+        context['bandits'] = current_app.extensions['mab'].bandits.items()
         return self.render('panels/mab-panel.html', context)
